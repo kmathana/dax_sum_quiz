@@ -16,16 +16,16 @@ questions = [
         "description": """
 We have a table **Sales** with columns:
 
-- `Sales[Quantity]`  
-- `Sales[Price]`  
+- `Orders[ManHrs]`  
+- `WorkCenter[Cost/Hr]`  
 
-There is **no** `Sales[LineTotal]` column.  
+There is **no** `Orders[ManHrsTotal]` column.  
 We want: **Total Cost = Σ (ManHrs × Cost/Hr)**.  
 Which measure is correct?
 """,
         "options": [
-            "Total Revenue = SUM ( Orders[ManHrs] * WorkCenter[CostHrs] )",
-            "Total Revenue = SUMX ( Orders, Orders[ManHrs] * WorkCenter[Cost/Hr] )",
+            "Total Cost = SUM ( Orders[ManHrs] * WorkCenter[CostHrs] )",
+            "Total Cost = SUMX ( Orders, Orders[ManHrs] * WorkCenter[Cost/Hr] )",
         ],
         "correct": 1,
         "explanations": [
@@ -48,7 +48,7 @@ Which is the most appropriate measure?
 """,
         "options": [
             "Total Cost = SUM ( Orders[ManHrsTotal] )",
-            "Total Revenue = SUMX ( Orders, Orders[ManHrsTotal] )",
+            "Total Cost = SUMX ( Orders, Orders[ManHrsTotal] )",
         ],
         "correct": 0,
         "explanations": [
