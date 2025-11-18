@@ -14,10 +14,10 @@ questions = [
         "id": 1,
         "title": "Total manhours × cost per hr",
         "description": """
-We have a table **Sales** with columns:
+We have a table **Orders** with columns:
 
 - `Orders[ManHrs]`  
-- `WorkCenter[Cost/Hr]`  
+- `Orders[Cost/Hr]`  
 
 There is **no** `Orders[ManHrsTotal]` column.  
 We want: **Total Cost = Σ (ManHrs × Cost/Hr)**.  
@@ -25,7 +25,7 @@ Which measure is correct?
 """,
         "options": [
             "Total Cost = SUM ( Orders[ManHrs] * WorkCenter[CostHrs] )",
-            "Total Cost = SUMX ( Orders, Orders[ManHrs] * WorkCenter[Cost/Hr] )",
+            "Total Cost = SUMX ( Orders, Orders[ManHrs] * Orders[Cost/Hr] )",
         ],
         "correct": 1,
         "explanations": [
@@ -40,7 +40,7 @@ Which measure is correct?
 We have a table **Sales** with columns:
 
 - `Orders[ManHrs]`  
-- `WorkCenters[Cost/Hr]`  
+- `Orders[Cost/Hr]`  
 - `Orders[ManHrsTotal]` = ManHrs × Cost/Hr (already computed in source/Power Query)  
 
 We want the grand total of `Orders[ManHrsTotal]`.  
