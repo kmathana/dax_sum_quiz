@@ -12,7 +12,7 @@ st.write(
 questions = [
     {
         "id": 1,
-        "title": "Total Revenue from Quantity × Price",
+        "title": "Total manhours × cost per hr",
         "description": """
 We have a table **Sales** with columns:
 
@@ -20,17 +20,17 @@ We have a table **Sales** with columns:
 - `Sales[Price]`  
 
 There is **no** `Sales[LineTotal]` column.  
-We want: **Total Revenue = Σ (Quantity × Price)**.  
+We want: **Total Cost = Σ (ManHrs × Cost/Hr)**.  
 Which measure is correct?
 """,
         "options": [
-            "Total Revenue = SUM ( Sales[Quantity] * Sales[Price] )",
-            "Total Revenue = SUMX ( Sales, Sales[Quantity] * Sales[Price] )",
+            "Total Revenue = SUM ( Orders[ManHrs] * WorkCenter[CostHrs] )",
+            "Total Revenue = SUMX ( Orders, Orders[ManHrs] * WorkCenter[Cost/Hr] )",
         ],
         "correct": 1,
         "explanations": [
             "❌ `SUM` cannot iterate row by row over an expression that multiplies two columns.",
-            "✅ Correct. `SUMX` iterates each row and evaluates `Quantity * Price` per row."
+            "✅ Correct. `SUMX` iterates each row and evaluates `ManHrs * Cost/Hr` per row."
         ]
     },
     {
@@ -39,16 +39,16 @@ Which measure is correct?
         "description": """
 We have a table **Sales** with columns:
 
-- `Sales[Quantity]`  
-- `Sales[Price]`  
-- `Sales[LineTotal]` = Quantity × Price (already computed in source/Power Query)  
+- `Orders[ManHrs]`  
+- `WorkCenters[Cost/Hr]`  
+- `Orders[ManHrsTotal]` = ManHrs × Cost/Hr (already computed in source/Power Query)  
 
-We want the grand total of `Sales[LineTotal]`.  
+We want the grand total of `Orders[ManHrsTotal]`.  
 Which is the most appropriate measure?
 """,
         "options": [
-            "Total Revenue = SUM ( Sales[LineTotal] )",
-            "Total Revenue = SUMX ( Sales, Sales[LineTotal] )",
+            "Total Cost = SUM ( Orders[ManHrsTotal] )",
+            "Total Revenue = SUMX ( Orders, Orders[ManHrsTotal] )",
         ],
         "correct": 0,
         "explanations": [
