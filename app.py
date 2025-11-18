@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="DAX: SUM vs SUMX Quiz", page_icon="📊", layout="centered")
 
-st.title("📊 DAX Quiz: SUM vs SUMX")
+st.title("DAX Quiz - SUM vs SUMX")
 st.write(
     "Test your understanding of when to use **SUM** and when to use **SUMX**. "
     "Select the best answer for each question and then check your score."
