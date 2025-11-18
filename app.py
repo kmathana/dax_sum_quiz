@@ -24,7 +24,7 @@ We want: **Total Cost = Σ (ManHrs × Cost/Hr)**.
 Which measure is correct?
 """,
         "options": [
-            "Total Cost = SUM ( Orders[ManHrs] * WorkCenter[CostHrs] )",
+            "Total Cost = SUM ( Orders[ManHrs] * Orders[CostHrs] )",
             "Total Cost = SUMX ( Orders, Orders[ManHrs] * Orders[Cost/Hr] )",
         ],
         "correct": 1,
